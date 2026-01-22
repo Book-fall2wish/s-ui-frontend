@@ -19,6 +19,8 @@ export interface Client {
   down: number
   desc: string
   group: string
+  trafficResetDay: number
+  lastTrafficReset: number
 }
 
 const defaultClient: Client = {
@@ -33,6 +35,8 @@ const defaultClient: Client = {
   down: 0,
   desc: "",
   group: "",
+  trafficResetDay: 0,
+  lastTrafficReset: 0,
 }
 
 type Config = {

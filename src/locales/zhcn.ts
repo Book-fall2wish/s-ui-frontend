@@ -201,6 +201,7 @@ export default {
     links: "链接",
     external: "外部链接",
     sub: "外部订阅",
+    trafficResetDay: "流量重置日",
   },
   bulk: {
     order: "排序",
@@ -528,6 +529,7 @@ export default {
   date: {
     expiry: "到期",
     expired: "已到期",
+    day: "日",
     d: "天",
     h: "时",
     m: "分",

@@ -201,6 +201,7 @@ export default {
     links: "Links",
     external: "External Link",
     sub: "External Subscription",
+    trafficResetDay: "Traffic Reset Day",
   },
   bulk: {
     order: "Order",
@@ -528,6 +529,7 @@ export default {
   date: {
     expiry: "Expiry",
     expired: "Expired",
+    day: "day",
     d: "d",
     h: "h",
     m: "m",

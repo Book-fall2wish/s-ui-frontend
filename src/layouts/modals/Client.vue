@@ -47,6 +47,17 @@
                   <DatePick :expiry="expDate" @submit="setDate" />
                 </v-col>
               </v-row>
+              <v-row>
+                <v-col cols="12" sm="6" md="4">
+                  <v-select
+                    v-model="client.trafficResetDay"
+                    :items="trafficResetOptions"
+                    :label="$t('client.trafficResetDay')"
+                    hide-details
+                    clearable
+                  ></v-select>
+                </v-col>
+              </v-row>
               <v-row v-if="id > 0">
                 <v-col cols="12" sm="6" md="4" class="d-flex flex-column">
                   <div class="d-flex justify-space-between align-center">
@@ -266,6 +277,15 @@ export default {
     }
   },
   computed: {
+    trafficResetOptions() {
+      const options = [
+        { title: this.$t('none'), value: 0 },
+      ]
+      for (let i = 1; i <= 31; i++) {
+        options.push({ title: `${i} ${this.$t('date.day')}`, value: i })
+      }
+      return options
+    },
     clientInbounds: {
       get() { return this.client.inbounds.length>0 ? this.client.inbounds.sort() : [] },
       set(v:number[]) { this.client.inbounds = v.length == 0 ?  [] : v.sort() }

@@ -163,6 +163,15 @@
             >{{ HumanReadable.remainedDays(item.expiry) }}</v-chip>
           </div>
         </template>
+        <template v-slot:item.trafficResetDay="{ item }">
+          <div class="text-start">
+            <v-chip
+              size="small"
+              :color="item.trafficResetDay > 0 ? 'primary' : 'grey'"
+              label
+            >{{ item.trafficResetDay > 0 ? item.trafficResetDay + ' ' + $t('date.day') : $t('none') }}</v-chip>
+          </div>
+        </template>
         <template v-slot:item.online="{ item }">
           <div class="text-start">
             <template v-if="isOnline(item.name).value">
@@ -286,6 +295,7 @@ const headers = [
   { title: i18n.global.t('actions.action'), key: 'actions', sortable: false },
   { title: i18n.global.t('stats.volume'), key: 'volume' },
   { title: i18n.global.t('date.expiry'), key: 'expiry' },
+  { title: i18n.global.t('client.trafficResetDay'), key: 'trafficResetDay' },
   { title: i18n.global.t('online'), key: 'online' },
   { key: 'data-table-group', width: 0 },
 ]
